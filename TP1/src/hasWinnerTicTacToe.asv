@@ -1,0 +1,32 @@
+function answer=hasWinnerTicTacToe(board )
+    [rows cols]=size(board);
+    for i=1:rows
+        auxi=sum(board(i,:));
+        if(auxi==3)
+            answer=1;
+            return;
+        else
+            answer=(-1);
+            return;
+        end
+    end    
+    
+    for i=1:cols
+        auxi=sum(board(:,i));
+        if(auxi==3)
+            answer=1;
+            return;
+        else
+            answer=(-1);
+            return;
+        end
+    end   
+    
+    if(board(1,1)==board(2,2) && board(2,2)==board(3,3))
+        ans
+        return;
+    end
+
+    
+    
+end
