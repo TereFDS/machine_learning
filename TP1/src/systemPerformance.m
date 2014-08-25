@@ -1,5 +1,6 @@
 function [trainingBoards, result]=systemPerformance(board,weights)
     
+    trainingBoards={};
     i=0;
     result=0;
     while(i<9 && result==0)
@@ -12,10 +13,12 @@ function [trainingBoards, result]=systemPerformance(board,weights)
          [row,col]=smartPosition(board,player,weights);
    
          board=moveTicTacToe(board,row,col,player);
-        
+         
         i=i+1;
         disp(i);
         showBoard(board);
+        [trainRows, trainCols]=size(trainingBoard);
+        trainingBoard(trainRows+1,trainCols)={calculateStats(board,player)};
         result=hasWinnerTicTacToe(board);
     end
     

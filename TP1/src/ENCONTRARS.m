@@ -9,9 +9,10 @@ function  hipotesis = ENCONTRARS( description,trainingSet )
     for i=1:trainQty
         if(trainingSet(i,result)>0)
             for j=1:varQty
-               if(hipotesis(j)!=generalVal && trainingSet(i,j)!=hipotesis(j))
+               if(hipotesis(j)~=generalVal && trainingSet(i,j)~=hipotesis(j))
                    switch hipotesis(j)
-                       case nullVal: hipotesis(j)=trainingSet(i,j);
+                       case nullVal
+                                hipotesis(j)=trainingSet(i,j);
                                     break;
                        otherwise
                            hipotesis(j)=generalVal;

@@ -29,9 +29,11 @@ function hipotesisSolution= DISFRUTADEPORTE(trainingSet)
     hipotesisSolution=cell(1,size(hipotesis));
     for i=1: size(hipotesis)
         switch(hipotesis(i))
-            case nullVal: hipotesisSolution(1,i)=java.lang.String('0');
+            case nullVal 
+                        hipotesisSolution(1,i)=java.lang.String('0');
                             break;
-            case generalVal: hipotesisSolution(i)=java.lang.String('?');
+            case generalVal 
+                        hipotesisSolution(i)=java.lang.String('?');
                             break;
             otherwise
             hipotesisSolution(1,i)=textCell(hipotesis(i),i);

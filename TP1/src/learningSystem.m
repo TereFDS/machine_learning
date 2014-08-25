@@ -1,0 +1,16 @@
+function learningSystem()
+    maxIterations=200;
+    weights=rand(1,5);
+    for i=1:maxIterations
+        board=experimentGenerator(weights);
+        [trainingBoards, result]=systemPerformance(board,weights);
+        [boardsQty boardsCol]=size(trainingBoards);
+        trainingMatrix=zeros(boardsQty,6);
+        for j=1:boardsQty
+            trainingMatrix=trainingPair(trainingMatrix,board,player,weights);
+        end
+        
+        weights=LMSAlgoritm(trainingMatrix,weights);
+    end
+
+end

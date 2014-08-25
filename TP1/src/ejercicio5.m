@@ -3,5 +3,5 @@ function ejercicio5()
     varQty=6;
     trainingSet=[1,1,1,1,1,1,1 ; 1,1,2,1,1,1,1 ;2,2,2,1,1,2,-1 ; 1,1,2,1,2,2,1];
         
-    resultado=DISFRUTADEPORTE(trainingSet)
+    resultado=DISFRUTADEPORTE(trainingSet);
 end
