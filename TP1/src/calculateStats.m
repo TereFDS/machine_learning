@@ -1,31 +1,3 @@
-
-function trainingMatrix=trainingPair(trainingMatrix, board,player,weights)
-    
-    stats=calculateStats(board,player);
-    [rowsTraining colsTraining]=size(trainingMatrix);
-    enemy=player*(-1);
-    score=0;
-    if (stats(1,1)>0)        
-        
-        score=100;
-        
-    elseif(stats(1,2)>0)
-        
-        score=(-100);
-    
-    elseif(stats(1,5)==9)
-        
-        score=0;
-        
-    else
-       [rowEnemy colEnemy]=pcMove(board,enemy);
-       boardAuxi=moveTicTacToe(board,rowEnemy,colEnemy,enemy);
-        
-        
-    end
-    trainingMatrix(rowsTraining+1,:)=[stats score];
-end
-
 %stats es un array formado por x1 ...x5
 function stats=calculateStats(board,player)
     stats=zeros(1,5);

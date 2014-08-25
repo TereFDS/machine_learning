@@ -1,13 +1,9 @@
-function smartGame()
+function [trainingSet result]=systemPerformance(weights)
 board=zeros(3,3);
     i=0;
-    winner=0;
+    resultr=0;
     while(i<9 && winner==0)
         
-        
-        [row,col]=smartPosition(board,player);
-        disp('movement');
-        disp([row,col]);
         if( mod(i,2)==0)
             player=1;
         else
@@ -37,20 +33,17 @@ board=zeros(3,3);
 end
 
 
-function [row, col]= smartPosition(board,player)
+function [row, col]= smartPosition(board,player,weights)
 [rows, cols]=size(board);
 if(player==-1)
    [row, col]=pcMove(board,player);
     return;
+else
+    [row, col]=pcMove(board,player,weights);
 end
 
-row=randi(rows);
-col=randi(cols);
-    while(board(row,col)~=0)
-        row=randi(rows);
-        col=randi(cols);
-    end
 end
+
 
 
 
