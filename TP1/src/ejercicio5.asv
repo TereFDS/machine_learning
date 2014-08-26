@@ -26,12 +26,11 @@ function ejercicio5(trainingQty)
             
             
         end
-        disp('trainingSet');
-        disp(trainingSet);
-        resultado=ENCONTRARS(description,trainingSet);
+        
+        resultado=DISFRUTADEPORTE(trainingSet);
         disp(resultado);
         
-        funcionObjetivo=[1,1,0,0,0,0];
+        funcionObjetivo={'soleado','cálida','?','?','?','?'};
         equals=true;
         for k=1:varQty
             if(funcionObjetivo(1,k)~=resultado(1,k))
@@ -39,11 +38,8 @@ function ejercicio5(trainingQty)
             end  
         end
         if(equals==true)
-            rightnessPercentage=rightnessPercentage+1;
+            rightnessPercentage=+1;
         end
-    end
+    end     
     
-    rightnessPercentage=rightnessPercentage/20
-    
-
 end
