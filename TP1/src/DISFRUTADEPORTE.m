@@ -4,7 +4,7 @@ function hipotesisSolution= DISFRUTADEPORTE(trainingSet)
     generalVal=0;
    
     hipotesis=ENCONTRARS(description,trainingSet); 
-
+    
     textCell=cell(3,6);
     %descripcion de cielo
     textCell(1,1)=java.lang.String('soleado');
@@ -25,17 +25,16 @@ function hipotesisSolution= DISFRUTADEPORTE(trainingSet)
     %descripcion de pronostico
     textCell(1,6)=java.lang.String('igual');
     textCell(2,6)=java.lang.String('cambiante');
-    
-    hipotesisSolution=cell(1,size(hipotesis));
-    for i=1: size(hipotesis)
-        switch(hipotesis(i))
-            case nullVal 
-                        hipotesisSolution(1,i)=java.lang.String('0');
-                            break;
-            case generalVal 
+    [r, variablesQty]=size(hipotesis);
+    hipotesisSolution=cell(1,variablesQty);
+    for i=1: variablesQty
+        if(hipotesis(i)==nullVal)
+              hipotesisSolution(1,i)=java.lang.String('0');
+                        
+        elseif (hipotesis(i)==generalVal) 
                         hipotesisSolution(i)=java.lang.String('?');
-                            break;
-            otherwise
+                        
+        else
             hipotesisSolution(1,i)=textCell(hipotesis(i),i);
        
         end
