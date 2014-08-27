@@ -6,7 +6,7 @@ function [row, col]=robotMove(board,player,weights)
     for i=1:rows
        for j=1:cols
            if(board(i,j)==0)
-               board=moveTicTacToe(board,row,col,player);
+               board=moveTicTacToe(board,i,j,player);
               actualScore=(weights(2:5)')*calculateStats(board,player);
               board(i,j)=0; %deshago el movimiento hecho
               if(row== -1 && col== -1)
