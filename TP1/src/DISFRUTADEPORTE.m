@@ -1,3 +1,5 @@
+%Utiliza la funcion ENCONTRARS para resolver el problema DISFRUTADEPORTE, y
+%mostrar la hipotesis resultado de manera legible 
 function hipotesisSolution= DISFRUTADEPORTE(trainingSet)
    description=[3,2,2,2,2,2];
    nullVal=-1;
