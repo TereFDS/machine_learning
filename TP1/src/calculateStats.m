@@ -76,6 +76,6 @@ function stats=calculateStats(board,player)
     end
     
  
-    stats(1,5)=sum(sum(board==0)); %calculando cantidad de fichas del tablero
+    stats(1,5)=sum(sum(board~=0)); %calculando cantidad de fichas del tablero
     
 end

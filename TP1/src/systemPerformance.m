@@ -3,6 +3,7 @@ function [trainingBoards, result]=systemPerformance(board,weights)
     trainingBoards={};
     i=0;
     result=0;
+    
     while(i<9 && result==0)
         
         if( mod(i,2)==0)
@@ -19,7 +20,7 @@ function [trainingBoards, result]=systemPerformance(board,weights)
         showBoard(board);
         [trainRows, trainCols]=size(trainingBoards);
         
-        trainingBoards(trainRows+1,1)={calculateStats(board,player)};
+        trainingBoards(trainRows+1,1)={board};
         result=hasWinnerTicTacToe(board);
     end
     

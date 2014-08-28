@@ -1,3 +1,4 @@
+%funcion de evaluacion fija (contrincante del robot que esta aprendiendo)
 function [row, col]=pcMove(board,player)
     [rows, cols]=size(board);
     row= -1;
