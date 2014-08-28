@@ -15,8 +15,11 @@ function learningSystem()
         end
         
         weights=LMSAlgoritm(trainingMatrix,weights);
-        results(i)=result;
-        
+        if(i==1)
+            results(i)=result;
+        else
+            results(i)=(results(i-1)*(i-1)+result)/i;
+        end
     end
     plot([1:maxIterations],results,'o');
 end
