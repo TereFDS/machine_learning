@@ -1,8 +1,8 @@
 %Sistema de aprendizaje. Ejecutar esta funcion para el ejercicio 3.
 
 function learningSystem()
-    maxIterations=10;
-    weights=rand(1,6);
+    maxIterations=200;
+    weights=rand(1,5);
     player=1; %player es el aprendiz
     results=zeros(1,maxIterations);
     for i=1:maxIterations

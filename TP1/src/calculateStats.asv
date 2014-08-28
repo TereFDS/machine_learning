@@ -40,29 +40,22 @@ function stats=calculateStats(board,player)
     diag=[board(1,1),board(2,2),board(3,3)];
     auxi=sum(diag);
     if (auxi*player==2)
-            if(board(2,2)~=0)
-                %x3
-                stats(1,3)=stats(1,3)+1;
-            end
+            if(board(2,2)~
+            %x3
+            stats(1,3)=stats(1,3)+1;
         elseif (auxi*enemy==2)
-            if(board(2,2)~=0)
-                %x4
-                stats(1,4)=stats(1,4)+1;
-            end
+            %posible tateti del contrincante
+            stats(1,4)=stats(1,4)+1;
     end
     
     diag=[board(1,3),board(2,2),board(3,1)];
     auxi=sum(diag);
     if (auxi*player==2)
-            if(board(2,2)~=0)
-                %x3
-                stats(1,3)=stats(1,3)+1;
-            end
+            %posible tateti propio
+            stats(1,3)=stats(1,3)+1;
         elseif (auxi*enemy==2)
-            if(board(2,2)~=0)
-                %x4
-                stats(1,4)=stats(1,4)+1;
-            end
+            %posible tateti del contrincante
+            stats(1,4)=stats(1,4)+1;
     end
         
 end

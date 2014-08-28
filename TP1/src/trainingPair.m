@@ -10,15 +10,15 @@ stats=calculateStats(board,player);
 [rowsTraining, colsTraining]=size(trainingMatrix);
 enemy=player*(-1);
 score=0;
-if (stats(1,1)>0)
+if(sum(sum(board==player))>0)
     
     score=100;
     
-elseif(stats(1,2)>0)
+elseif(sum(sum(board==enemy))>0)
     
     score=(-100);
     
-elseif(stats(1,5)==9)
+elseif(stats(1,1)+stats(1,2)==9)
     
     score=0;
     
@@ -27,15 +27,15 @@ else
     boardAuxi=moveTicTacToe(board,rowEnemy,colEnemy,enemy);
     stats=calculateStats(boardAuxi,player);
     score=0;
-    if (stats(1,1)>0)
+    if (sum(sum(board==player))>0)
         
         score=100;
         
-    elseif(stats(1,2)>0)
+    elseif(sum(sum(board==enemy))>0)
         
         score=(-100);
         
-    elseif(stats(1,5)==9)
+    elseif(stats(1,1)+stats(1,2)==9)
         
         score=0;
         
